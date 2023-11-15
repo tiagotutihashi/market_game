@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemStats" load_steps=2 format=3 uid="uid://bs3aorsax80kp"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_b67sy"]
+
+[resource]
+script = ExtResource("1_b67sy")
+item_name = "Ovo"
+item_value = 75.0

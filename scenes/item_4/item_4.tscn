@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://diyiagyar57c3"]
+
+[ext_resource type="PackedScene" uid="uid://buus1akyvj836" path="res://scenes/model/item.tscn" id="1_byh47"]
+[ext_resource type="Resource" uid="uid://ic6fqb57qrns" path="res://scenes/item_4/item_4.tres" id="2_0vhrm"]
+
+[node name="item" instance=ExtResource("1_byh47")]
+item_stats = ExtResource("2_0vhrm")

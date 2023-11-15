@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://caj73th111i4l"]
+
+[ext_resource type="PackedScene" uid="uid://buus1akyvj836" path="res://scenes/model/item.tscn" id="1_yvlu2"]
+[ext_resource type="Resource" uid="uid://c6pgi54c7es6p" path="res://scenes/item_1/item_1.tres" id="2_gcple"]
+[ext_resource type="Texture2D" uid="uid://b21674cu1ihel" path="res://addons/kenney_prototype_textures/light/texture_07.png" id="3_1i2qg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1e0t"]
+albedo_texture = ExtResource("3_1i2qg")
+uv1_triplanar = true
+
+[node name="item" instance=ExtResource("1_yvlu2")]
+item_stats = ExtResource("2_gcple")
+
+[node name="mesh" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_f1e0t")

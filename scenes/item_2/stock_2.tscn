@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://tjnufgnlf05m"]
+
+[ext_resource type="PackedScene" uid="uid://bw7ib72k0ipwe" path="res://scenes/model/stock.tscn" id="1_2531t"]
+[ext_resource type="PackedScene" uid="uid://0itvpey0kosh" path="res://scenes/item_2/item_2.tscn" id="2_3h0a1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1vgsq"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="stock" instance=ExtResource("1_2531t")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_1vgsq")
+
+[node name="item" parent="item_holder" index="0" instance=ExtResource("2_3h0a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)

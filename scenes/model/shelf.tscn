@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://sfxdtoixl1fh"]
+
+[ext_resource type="Texture2D" uid="uid://dwtpf5x7wsrly" path="res://addons/kenney_prototype_textures/purple/texture_08.png" id="1_4b58s"]
+[ext_resource type="Script" path="res://scripts/shelf.gd" id="1_4w7e0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8x5a"]
+albedo_texture = ExtResource("1_4b58s")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ej57n"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pe5eo"]
+size = Vector3(3, 2, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uvv0d"]
+size = Vector2(3, 4)
+
+[node name="shelf" type="Node3D" groups=["shelf"]]
+script = ExtResource("1_4w7e0")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_x8x5a")
+mesh = SubResource("BoxMesh_ej57n")
+
+[node name="items" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_pe5eo")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="buyMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_uvv0d")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

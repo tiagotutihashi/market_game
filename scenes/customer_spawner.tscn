@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vsym2u10kqxo"]
+
+[ext_resource type="Script" path="res://scripts/customer_spawner.gd" id="1_65hid"]
+
+[node name="customer_spawner" type="Node3D" groups=["customer_spawner"]]
+script = ExtResource("1_65hid")
+
+[node name="customer_list" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="."]

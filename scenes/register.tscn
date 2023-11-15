@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjdw1ovnxvl65"]
+
+[ext_resource type="Texture2D" uid="uid://7k5y6g33g3ap" path="res://addons/kenney_prototype_textures/dark/texture_04.png" id="1_5dcae"]
+[ext_resource type="Script" path="res://scripts/register.gd" id="1_5ne83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbel7"]
+albedo_texture = ExtResource("1_5dcae")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_umth1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5omi"]
+size = Vector3(2, 3, 2)
+
+[node name="register" type="Node3D" groups=["register"]]
+script = ExtResource("1_5ne83")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_dbel7")
+mesh = SubResource("BoxMesh_umth1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_w5omi")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

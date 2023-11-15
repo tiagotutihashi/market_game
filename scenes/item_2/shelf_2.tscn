@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpf2f66rxpwnc"]
+
+[ext_resource type="PackedScene" uid="uid://sfxdtoixl1fh" path="res://scenes/model/shelf.tscn" id="1_nhbkf"]
+[ext_resource type="PackedScene" uid="uid://0itvpey0kosh" path="res://scenes/item_2/item_2.tscn" id="2_rorfm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vkyt1"]
+data = PackedVector3Array(-0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, -1, -0.5, 0.5, -1, 0.5, -0.5, -1, -0.5, 0.5, -1, -0.5, -0.5, -1, 0.5, -0.5, -1, 0.5, 0.5, 1, 0.5, 0.5, -1, 0.5, -0.5, 1, 0.5, 0.5, -1, 0.5, -0.5, -1, 0.5, -0.5, 1, -0.5, 0.5, -1, -0.5, 0.5, 1, -0.5, -0.5, -1, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, -1, 0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, -1, -0.5, 0.5, 1, -0.5, 0.5, -1, 0.5, 0.5, -1, -0.5, -0.5, 1, 0.5, -0.5, 1, -0.5, -0.5, -1, 0.5, -0.5, 1, 0.5, -0.5, -1, -0.5, -0.5, -1)
+
+[node name="shelf" instance=ExtResource("1_nhbkf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_vkyt1")
+
+[node name="item" parent="items" index="0" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193912, 1.1, 0.735935)
+
+[node name="item2" parent="items" index="1" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193912, 1.1, 0.318014)
+
+[node name="item3" parent="items" index="2" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193912, 1.1, -0.305815)
+
+[node name="item4" parent="items" index="3" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193912, 1.1, -0.728771)
+
+[node name="item5" parent="items" index="4" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, 0.735935)
+
+[node name="item6" parent="items" index="5" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, 0.318014)
+
+[node name="item7" parent="items" index="6" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, -0.305815)
+
+[node name="item8" parent="items" index="7" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, -0.728771)
+
+[node name="item9" parent="items" index="8" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, 0.735935)
+
+[node name="item10" parent="items" index="9" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, 0.318014)
+
+[node name="item11" parent="items" index="10" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, -0.305815)
+
+[node name="item12" parent="items" index="11" instance=ExtResource("2_rorfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240015, 1.1, -0.728771)

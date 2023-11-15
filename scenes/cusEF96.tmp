@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfy2dagmeprte"]
+
+[ext_resource type="Texture2D" uid="uid://dc7m3voqteajc" path="res://addons/kenney_prototype_textures/red/texture_09.png" id="1_6l7ve"]
+[ext_resource type="Script" path="res://scripts/customer.gd" id="1_uxwdh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_us27n"]
+albedo_texture = ExtResource("1_6l7ve")
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gw3d5"]
+
+[node name="customer" type="CharacterBody3D"]
+script = ExtResource("1_uxwdh")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_us27n")
+mesh = SubResource("CapsuleMesh_gw3d5")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemStats" load_steps=2 format=3 uid="uid://ic6fqb57qrns"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_xky62"]
+
+[resource]
+script = ExtResource("1_xky62")
+item_name = "Pera"
+item_value = 150.0
